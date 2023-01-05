@@ -55,3 +55,25 @@ INSERT INTO
     (16,'David','Sophie','16 road of Shareholder'),
     (17,'Bertrand','Vincent','17 road of Shareholder'),
     (18, 'Roux', 'Emilie', '18 road of Shareholder');
+
+INSERT INTO
+    Possesses (inc_id, sha_id, action_number)
+    VALUES
+    (1, 1, 1000),
+    (1, 2, 500),
+    (1, 3, 250),
+    (2, 4, 1000),
+    (2, 5, 500),
+    (2, 6, 250),
+    (3, 7, 1000),
+    (3, 8, 500),
+    (3, 9, 250),
+    (4, 10, 1000),
+    (4, 11, 500),
+    (4, 12, 250),
+    (5, 13, 1000),
+    (5, 14, 500),
+    (5, 15, 250),
+    (6, 16, 1000),
+    (6, 17, 500),
+    (6, 18, 250);
