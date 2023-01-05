@@ -2,7 +2,7 @@ CREATE TABLE IF NOT EXISTS Incorparation (
     inc_id SERIAL PRIMARY KEY,
     inc_name VARCHAR(255) NOT NULL,
     inc_address VARCHAR(255) NOT NULL,
-    capital INTEGER NOT NULL
+    inc_capital INTEGER NOT NULL
 );
 
 
@@ -24,7 +24,7 @@ CREATE TABLE IF NOT EXISTS Possesses (
 );
 
 INSERT INTO
-    Incorparation (inc_name, inc_address, capital)
+    Incorparation (inc_name, inc_address, inc_capital)
 VALUES
     ('Incorparation 1','1 road of Incorparation',100000),
     ('Incorparation 2','2 road of Incorparation',200000),
