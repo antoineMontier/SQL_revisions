@@ -24,56 +24,56 @@ CREATE TABLE IF NOT EXISTS Possesses (
 );
 
 INSERT INTO
-    Incorparation (inc_id, inc_name, inc_address, inc_captial)
+    Incorparation (inc_name, inc_address, inc_captial)
 VALUES
-    (1,'Incorparation 1','1 road of Incorparation',100000),
-    (2,'Incorparation 2','2 road of Incorparation',200000),
-    (3,'Incorparation 3','3 road of Incorparation',300000),
-    (4,'Incorparation 4','4 road of Incorparation',400000),
-    (5,'Incorparation 5','5 road of Incorparation',500000),
-    (6,'Incorparation 6','6 road of Incorparation',600000),
-    (7,'Incorparation 7','7 road of Incorparation',700000);
+    ('Incorparation 1','1 road of Incorparation',100000),
+    ('Incorparation 2','2 road of Incorparation',200000),
+    ('Incorparation 3','3 road of Incorparation',300000),
+    ('Incorparation 4','4 road of Incorparation',400000),
+    ('Incorparation 5','5 road of Incorparation',500000),
+    ('Incorparation 6','6 road of Incorparation',600000),
+    ('Incorparation 7','7 road of Incorparation',700000);
 
 INSERT INTO
-    Shareholder (sha_id, sha_lastname, sha_firstname, sha_address)
+    Shareholder (sha_lastname, sha_firstname, sha_address)
     VALUES
-    (1, 'Dupont', 'Jean', '1 road of Shareholder'),
-    (2, 'Durand', 'Marie', '2 road of Shareholder'),
-    (3, 'Martin', 'Luc', '3 road of Shareholder'),
-    (4, 'Dubois', 'Anne', '4 road of Shareholder'),
-    (5, 'Thomas', 'David', '5 road of Shareholder'),
-    (6, 'Robert', 'Sylvie', '6 road of Shareholder'),
-    (7,'Richard','Bertrand','7 road of Shareholder'),
-    (8, 'Petit', 'Claire', '8 road of Shareholder'),
-    (9, 'Durif', 'Eric', '9 road of Shareholder'),
-    (10,'Lefebvre','Julie','10 road of Shareholder'),
-    (11,'Moreau','Thomas','11 road of Shareholder'),
-    (12,'Laurent','Sandra','12 road of Shareholder'),
-    (13, 'Simon', 'Paul', '13 road of Shareholder'),
-    (14,'Michel','Christine','14 road of Shareholder'),
-    (15,'Garcia','Julien','15 road of Shareholder'),
-    (16,'David','Sophie','16 road of Shareholder'),
-    (17,'Bertrand','Vincent','17 road of Shareholder'),
-    (18, 'Roux', 'Emilie', '18 road of Shareholder');
+    ('Dupont', 'Jean', '1 road of Shareholder'),
+    ('Durand', 'Marie', '2 road of Shareholder'),
+    ('Martin', 'Luc', '3 road of Shareholder'),
+    ('Dubois', 'Anne', '4 road of Shareholder'),
+    ('Thomas', 'David', '5 road of Shareholder'),
+    ('Robert', 'Sylvie', '6 road of Shareholder'),
+    ('Richard','Bertrand','7 road of Shareholder'),
+    ('Petit', 'Claire', '8 road of Shareholder'),
+    ('Durif', 'Eric', '9 road of Shareholder'),
+    ('Lefebvre','Julie','10 road of Shareholder'),
+    ('Moreau','Thomas','11 road of Shareholder'),
+    ('Laurent','Sandra','12 road of Shareholder'),
+    ('Simon', 'Paul', '13 road of Shareholder'),
+    ('Michel','Christine','14 road of Shareholder'),
+    ('Garcia','Julien','15 road of Shareholder'),
+    ('David','Sophie','16 road of Shareholder'),
+    ('Bertrand','Vincent','17 road of Shareholder'),
+    ('Roux', 'Emilie', '18 road of Shareholder');
 
 INSERT INTO
     Possesses (inc_id, sha_id, action_number)
     VALUES
-    (1, 1, 1000),
-    (1, 2, 500),
-    (1, 3, 250),
-    (2, 4, 1000),
-    (2, 5, 500),
-    (2, 6, 250),
-    (3, 7, 1000),
-    (3, 8, 500),
-    (3, 9, 250),
-    (4, 10, 1000),
-    (4, 11, 500),
-    (4, 12, 250),
-    (5, 13, 1000),
-    (5, 14, 500),
-    (5, 15, 250),
-    (6, 16, 1000),
-    (6, 17, 500),
-    (6, 18, 250);
+    ((SELECT inc_id FROM Incorparation where inc_name LIKE 'Incorparation 1'), (SELECT sha_id FROM Shareholder WHERE sha_lastname LIKE 'Dupont'), 1000),
+    ((SELECT inc_id FROM Incorparation where inc_name LIKE 'Incorparation 1'), (SELECT sha_id FROM Shareholder WHERE sha_lastname LIKE 'Durand'), 500),
+    ((SELECT inc_id FROM Incorparation where inc_name LIKE 'Incorparation 1'), (SELECT sha_id FROM Shareholder WHERE sha_lastname LIKE 'Martin'), 250),
+    ((SELECT inc_id FROM Incorparation where inc_name LIKE 'Incorparation 2'), (SELECT sha_id FROM Shareholder WHERE sha_lastname LIKE 'Dubois'), 1000),
+    ((SELECT inc_id FROM Incorparation where inc_name LIKE 'Incorparation 2'), (SELECT sha_id FROM Shareholder WHERE sha_lastname LIKE 'Thomas'), 500),
+    ((SELECT inc_id FROM Incorparation where inc_name LIKE 'Incorparation 2'), (SELECT sha_id FROM Shareholder WHERE sha_lastname LIKE 'Robert'), 250),
+    ((SELECT inc_id FROM Incorparation where inc_name LIKE 'Incorparation 3'), (SELECT sha_id FROM Shareholder WHERE sha_lastname LIKE 'Richard'), 1000),
+    ((SELECT inc_id FROM Incorparation where inc_name LIKE 'Incorparation 3'), (SELECT sha_id FROM Shareholder WHERE sha_lastname LIKE 'Petit'), 500),
+    ((SELECT inc_id FROM Incorparation where inc_name LIKE 'Incorparation 3'), (SELECT sha_id FROM Shareholder WHERE sha_lastname LIKE 'Durif'), 250),
+    ((SELECT inc_id FROM Incorparation where inc_name LIKE 'Incorparation 4'), (SELECT sha_id FROM Shareholder WHERE sha_lastname LIKE 'Lefebvre'), 1000),
+    ((SELECT inc_id FROM Incorparation where inc_name LIKE 'Incorparation 4'), (SELECT sha_id FROM Shareholder WHERE sha_lastname LIKE 'Moreau'), 500),
+    ((SELECT inc_id FROM Incorparation where inc_name LIKE 'Incorparation 4'), (SELECT sha_id FROM Shareholder WHERE sha_lastname LIKE 'Laurent'), 250),
+    ((SELECT inc_id FROM Incorparation where inc_name LIKE 'Incorparation 5'), (SELECT sha_id FROM Shareholder WHERE sha_lastname LIKE 'Simon'), 1000),
+    ((SELECT inc_id FROM Incorparation where inc_name LIKE 'Incorparation 5'), (SELECT sha_id FROM Shareholder WHERE sha_lastname LIKE 'Michel'), 500),
+    ((SELECT inc_id FROM Incorparation where inc_name LIKE 'Incorparation 5'), (SELECT sha_id FROM Shareholder WHERE sha_lastname LIKE 'Garcia'), 250),
+    ((SELECT inc_id FROM Incorparation where inc_name LIKE 'Incorparation 6'), (SELECT sha_id FROM Shareholder WHERE sha_lastname LIKE 'David'), 1000),
+    ((SELECT inc_id FROM Incorparation where inc_name LIKE 'Incorparation 6'), (SELECT sha_id FROM Shareholder WHERE sha_lastname LIKE 'Bertrand'), 500),
+    ((SELECT inc_id FROM Incorparation where inc_name LIKE 'Incorparation 6'), (SELECT sha_id FROM Shareholder WHERE sha_lastname LIKE 'Roux'), 250);
